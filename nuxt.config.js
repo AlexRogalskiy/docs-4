@@ -1,3 +1,12 @@
+import Sass from 'sass'
+
+const dartSass = {
+  implementation: Sass,
+  additionalData: `
+    @use "sass:math";
+  `,
+}
+
 export default {
   target: 'static',
 
@@ -19,5 +28,11 @@ export default {
   modules: ['@nuxt/content'],
   styleResources: {
     scss: ['~/assets/styles/global.scss'],
+  },
+  css: ['~/assets/fonts/expletus.css'],
+  build: {
+    loaders: {
+      scss: dartSass,
+    },
   },
 }
