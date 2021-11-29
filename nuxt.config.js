@@ -14,14 +14,10 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
-
   components: true,
-
   buildModules: ['@nuxt/typescript-build'],
-
   modules: ['@nuxt/content'],
-
-  content: {},
-
-  build: {},
+  styleResources: {
+    scss: ['~/assets/styles/global.scss'],
+  },
 }
