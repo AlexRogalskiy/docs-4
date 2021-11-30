@@ -7,21 +7,20 @@
           <span class="logo-colored">Tube</span>
           <span class="wiki-text">.wiki</span>
         </h1>
-        <img class="logo-small" src="@/assets/icon.svg" alt="ViewTube" />
+        <img class="logo-small" src="@/assets/icon.min.svg" alt="ViewTube" />
       </nuxt-link>
     </div>
     <Nuxt />
   </div>
 </template>
 
-<style lang="scss" scoped>
-$header-height: 60px;
-
+<style lang="scss">
 html,
 body {
   margin: 0;
-  background-color: #1e1e1e;
+  background-color: $bgcolor-main;
 }
+
 .header {
   height: $header-height;
   width: 100%;
@@ -33,8 +32,9 @@ body {
   justify-content: space-between;
   z-index: 800;
   box-shadow: 0;
-  background-color: #1e1e1e;
-  font-family: 'expletus-bold';
+  background-color: $header-bgcolor;
+  font-family: $header-font;
+  box-shadow: $medium-shadow;
 
   .logo-link {
     text-decoration: none;
@@ -74,13 +74,14 @@ body {
       }
 
       .wiki-text {
-        color: #77dd77;
+        color: $subtitle-color-light;
       }
     }
 
     .logo-small {
       margin: auto;
-      height: 40px;
+      height: 35px;
+      margin: 0 5px 0 0;
       transform: scale(0.8) translateY(-2px);
     }
   }

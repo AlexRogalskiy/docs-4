@@ -11,7 +11,7 @@ export default {
   target: 'static',
 
   head: {
-    title: 'viewtube-docs',
+    title: 'Wiki | ViewTube',
     htmlAttrs: {
       lang: 'en',
     },
@@ -24,7 +24,7 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   components: true,
-  buildModules: ['@nuxt/typescript-build'],
+  buildModules: ['@nuxt/typescript-build', '@nuxtjs/style-resources'],
   modules: ['@nuxt/content'],
   styleResources: {
     scss: ['~/assets/styles/global.scss'],

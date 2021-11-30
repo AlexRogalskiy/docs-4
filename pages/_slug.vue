@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="content">
     <h2>{{ page.title }}</h2>
     <h6>{{ page.description }}</h6>
     <nuxt-content :document="page" />
@@ -19,3 +19,14 @@ export default Vue.extend({
   },
 })
 </script>
+
+<style lang="scss" scoped>
+.content {
+  font-family: sans-serif;
+  color: $title-color;
+  width: 100%;
+  max-width: 700px;
+  margin: $header-height auto 0 auto;
+  overflow: hidden;
+}
+</style>
