@@ -1,19 +1,22 @@
 <template>
-  <div :to="`/${page.slug}`" class="page-card">
+  <NuxtLink :to="`/${page.slug}`" class="page-card">
     <div class="card-inner">
       <p class="card-title">{{ page.title }}</p>
       <p class="card-description">{{ page.description }}</p>
-      <Button :to="`/${page.slug}`" title="Learn more" />
+      <Button
+        title="Learn more"
+        :aria-label="page.tagline"
+      />
     </div>
-  </div>
+  </NuxtLink>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 export default Vue.extend({
   props: {
-    page: { type: Object, required: true },
-  },
+    page: { type: Object, required: true }
+  }
 })
 </script>
 

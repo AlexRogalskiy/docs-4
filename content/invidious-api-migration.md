@@ -1,6 +1,7 @@
 ---
 title: 'Invidious api migration'
 description: 'Check the progress on the migration from invidious here'
+tagline: 'Check the progress on the invidious migration'
 ---
 
 | Invidious endpoint | Status | Viewtube equivalent | Note |

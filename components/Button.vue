@@ -1,14 +1,16 @@
 <template>
-  <NuxtLink :to="to" class="button">{{ title }}</NuxtLink>
+  <component :is="to ? 'NuxtLink' : 'div'" class="button">
+    {{ title }}
+  </component>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 export default Vue.extend({
   props: {
-    to: { type: String, required: true },
-    title: { type: String, required: true },
-  },
+    to: { type: String, default: null },
+    title: { type: String, required: true }
+  }
 })
 </script>
 
@@ -18,7 +20,8 @@ export default Vue.extend({
   color: $bgcolor-main;
   background-color: $theme-color;
   font-weight: bold;
-  padding: 6px 16px;
+  padding: 8px 16px;
   border-radius: 8px;
+  width: fit-content;
 }
 </style>

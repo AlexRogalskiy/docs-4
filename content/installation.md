@@ -1,6 +1,7 @@
 ---
 title: Installation
 description: 'Install and run ViewTube on your own server'
+tagline: 'Install ViewTube yourself'
 ---
 
 The recommended installation method is Docker. Updating will be less of a hassle.
