@@ -26,7 +26,7 @@ export default Vue.extend({
   color: $title-color;
   width: 100%;
   max-width: 700px;
-  margin: $header-height auto 0 auto;
+  margin: 0;
   overflow: hidden;
 }
 </style>

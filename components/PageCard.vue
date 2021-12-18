@@ -1,11 +1,11 @@
 <template>
-  <NuxtLink :to="`/${page.slug}`" class="page-card">
+  <div :to="`/${page.slug}`" class="page-card">
     <div class="card-inner">
       <p class="card-title">{{ page.title }}</p>
       <p class="card-description">{{ page.description }}</p>
+      <Button :to="`/${page.slug}`" title="Learn more" />
     </div>
-    <span class="blur" :style="{ transform: `translate3d(${x}px,${y}px,0)` }" />
-  </NuxtLink>
+  </div>
 </template>
 
 <script lang="ts">
@@ -21,15 +21,15 @@ export default Vue.extend({
 .page-card {
   width: 100%;
   max-width: calc((700px / 2) - 20px);
-  margin: 10px;
+  margin: 10px 20px 10px 0;
   box-sizing: border-box;
-  border: solid 2px $theme-color-light;
-  border-radius: 5px;
+  border-radius: 8px;
   text-decoration: none;
   position: relative;
   overflow: hidden;
-  padding: 20px;
+  padding: 20px 20px 30px 20px;
   transition: border-color 500ms $intro-easing;
+  background-color: $bgcolor-alt;
 
   &:hover {
     border-color: $theme-color;
@@ -42,13 +42,15 @@ export default Vue.extend({
   .card-title {
     color: $title-color;
     font-weight: bold;
-    pointer-events: none;
     margin: 0;
+    font-size: 1.4rem;
   }
   .card-description {
-    color: $subtitle-color-light;
+    color: $subtitle-color;
     font-size: 0.9rem;
-    pointer-events: none;
+    margin: 10px 0 20px 0;
+    min-height: 70px;
+    font-size: 1rem;
   }
 }
 </style>

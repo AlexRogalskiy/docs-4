@@ -1,5 +1,9 @@
 <template>
   <div class="container">
+    <div class="title">
+      <h2>ViewTube</h2>
+      <p>An alternative Youtube frontend</p>
+    </div>
     <div class="pages">
       <PageCard v-for="page in pages" :key="page.slug" :page="page" />
     </div>
@@ -14,15 +18,16 @@ export default Vue.extend({
     const pages = await $content().fetch()
 
     return {
-      pages,
+      pages
     }
-  },
+  }
 })
 </script>
 
 <style lang="scss" scoped>
 .container {
   display: flex;
+  flex-direction: column;
   min-height: 100%;
 
   .pages {
@@ -31,11 +36,7 @@ export default Vue.extend({
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 200px auto 0 auto;
-
-    @media screen and (max-width: 700px) {
-      margin: $header-height auto 0 auto;
-    }
+    margin: 0 auto;
   }
 }
 </style>
