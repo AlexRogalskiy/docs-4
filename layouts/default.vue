@@ -6,7 +6,9 @@
         <h1 class="logo">
           <span>View</span>
           <span class="logo-colored">Tube</span>
-          <span class="wiki-text">.wiki</span>
+          <div class="wiki-text-clip">
+            <span class="wiki-text">.wiki</span>
+          </div>
         </h1>
       </NuxtLink>
       <div v-if="pageLinks" class="pages-list">
@@ -51,13 +53,24 @@ body {
   display: flex;
   flex-direction: row;
 
+  @media screen and (max-width: 700px) {
+    flex-direction: column;
+  }
+
   .sidebar {
+    position: sticky;
+    top: 0;
     width: $sidebar-width;
     height: 100%;
     display: flex;
     flex-direction: column;
     z-index: 800;
     box-shadow: 0;
+
+    @media screen and (max-width: 700px) {
+      background-color: $bgcolor-main;
+      width: 100%;
+    }
 
     .logo-link {
       font-family: $header-font;
@@ -96,16 +109,26 @@ body {
           -webkit-background-clip: text;
         }
 
-        .wiki-text {
-          color: $subtitle-color-light;
+        .wiki-text-clip {
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+          .wiki-text {
+            color: $subtitle-color-light;
+          }
         }
       }
 
       .logo-small {
         margin: auto;
-        height: 35px;
-        margin: 0 5px 0 0;
-        transform: scale(0.8) translateY(-2px);
+        height: 28px;
+        width: 28px;
+        margin: -5px 8px 0 0;
+        transition: transform 300ms linear;
+        animation: cog 2s linear infinite;
+
+        &:not(:hover) {
+          animation-play-state: paused;
+        }
       }
     }
 
@@ -115,6 +138,10 @@ body {
       flex-direction: column;
       padding: 0 10px;
       box-sizing: border-box;
+
+      @media screen and (max-width: 700px) {
+        display: none;
+      }
 
       .page-link {
         text-decoration: none;
@@ -135,6 +162,15 @@ body {
         }
       }
     }
+  }
+}
+
+@keyframes cog {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0);
   }
 }
 </style>

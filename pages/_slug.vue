@@ -14,13 +14,13 @@ export default Vue.extend({
     const page = await $content(params.slug).fetch()
 
     return {
-      page,
+      page
     }
-  },
+  }
 })
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .content {
   font-family: sans-serif;
   color: $title-color;
@@ -28,5 +28,14 @@ export default Vue.extend({
   max-width: 700px;
   margin: 0;
   overflow: hidden;
+  box-sizing: border-box;
+
+  .nuxt-content-container {
+  }
+
+  @media screen and (max-width: 700px) {
+    margin: 0 20px;
+    width: calc(100% - 40px);
+  }
 }
 </style>

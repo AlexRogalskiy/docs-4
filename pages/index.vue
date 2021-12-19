@@ -30,6 +30,10 @@ export default Vue.extend({
   flex-direction: column;
   min-height: 100%;
 
+  @media screen and (max-width: 700px) {
+    margin: 0 0 0 20px;
+  }
+
   .pages {
     width: 100%;
     max-width: 700px;
